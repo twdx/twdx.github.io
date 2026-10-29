@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
+<meta name="color-scheme" content="only light">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <title>Das mystische Potter Geburtstagsrätsel</title>
 <style>
@@ -26,6 +26,14 @@ html,body,h1,.intro,.login label,.password,.open,.error,.nojs,legend,.question-t
 .nojs{background:#d8b78d}
 .intro{font-size:20px}
 @media(max-width:650px){body{font-size:19px}.intro{font-size:19px}.question-title{font-size:21px}h1{font-size:32px}}
+
+/* 261029 Schwarze Textfarbe auch in Safari und bei dunklem Systemdesign */
+:root{color-scheme:only light}
+html,body,body *{color:#000!important;-webkit-text-fill-color:#000!important}
+input::placeholder{color:#000!important;-webkit-text-fill-color:#000!important;opacity:1}
+input:-webkit-autofill{-webkit-text-fill-color:#000!important;caret-color:#000}
+button:disabled{opacity:1}
+.answer-status.good::first-letter{color:#315821!important;-webkit-text-fill-color:#315821!important}
 </style>
 </head>
 <body>
