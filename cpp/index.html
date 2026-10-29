@@ -34,12 +34,30 @@ input::placeholder{color:#000!important;-webkit-text-fill-color:#000!important;o
 input:-webkit-autofill{-webkit-text-fill-color:#000!important;caret-color:#000}
 button:disabled{opacity:1}
 .answer-status.good::first-letter{color:#315821!important;-webkit-text-fill-color:#315821!important}
+
+/* 261029 Nordisches Flechtband als bewusster Übergang */
+.nordic-divider{position:relative;z-index:2;height:52px;margin:-8px 0 -8px;background:linear-gradient(180deg,#382719,#24190f 48%,#3c2918);border-top:2px solid #937044;border-bottom:2px solid #937044;box-shadow:0 -5px 12px #36200d45,0 6px 12px #36200d55;overflow:hidden}
+.nordic-divider svg{display:block;opacity:.9}
+.divider-seal{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:58px;height:48px;background:#2c1e12;border-left:1px solid #ae8951;border-right:1px solid #ae8951;font:32px/1 Georgia,serif;color:#d0ad70!important;-webkit-text-fill-color:#d0ad70!important}
+.paper{padding-top:34px}
+@media(max-width:650px){.nordic-divider{height:44px}.nordic-divider svg{height:40px}.divider-seal{height:40px;font-size:28px}.paper{padding-top:30px}}
+
+/* 261029 Eine gemeinsame Pergamentfläche für Titel und Rätsel */
+html{background:#24170e}
+body{background:repeating-linear-gradient(4deg,#1e140e 0,#302016 3px,#281a11 7px,#20150e 11px)}
+.book{position:relative;isolation:isolate;width:calc(100% - 32px);max-width:1024px;margin:24px auto;background-color:#d9b88d;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22240%22%20height%3D%22240%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.65%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22/%3E%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22/%3E%3C/filter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20opacity%3D%22.16%22%20filter%3D%22url%28%23n%29%22/%3E%3C/svg%3E"),radial-gradient(ellipse at 45% 30%,#f2d5a077,transparent 75%),linear-gradient(90deg,#9e6d3850,transparent 8%,transparent 92%,#8b582a55);border:1px solid #9b6c3b;box-shadow:0 10px 60px #000b,inset 0 0 45px #7e4b2433;border-radius:5px 12px 8px 4px}
+.masthead{background:none;overflow:hidden}
+.header-art{position:absolute;inset:0;background-size:120% auto;background-position:center top;mask-image:linear-gradient(to bottom,#000 0%,#000 45%,transparent 83%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 45%,transparent 83%);pointer-events:none}
+h1{z-index:1}
+.paper{background:none;isolation:auto;padding-top:22px}
+.tail{height:70px;background:none;text-align:center;font:34px/1 Georgia,serif;opacity:.55}
+@media(max-width:650px){.book{width:calc(100% - 16px);margin:8px auto}.masthead{height:300px}.header-art{background-size:auto 600px}.paper{padding-top:24px}.tail{height:54px}}
 </style>
 </head>
 <body>
 <main class="book">
-<header class="masthead art"><h1><span>Das mystische Potter</span><span>Geburtstagsrätsel</span></h1></header>
-<div class="paper"><div class="paper-texture" aria-hidden="true"></div>
+<header class="masthead"><div class="header-art art" aria-hidden="true"></div><h1><span>Das mystische Potter</span><span>Geburtstagsrätsel</span></h1></header>
+<div class="paper">
 <section id="gate" aria-label="Rätsel öffnen">
 <p class="intro">Ein kleines Geheimnis wartet auf dich.</p>
 <form id="unlock" class="login">
@@ -57,7 +75,7 @@ button:disabled{opacity:1}
 <section id="invitation" class="invitation" hidden aria-live="polite"></section>
 </section>
 </div>
-<footer class="tail art" aria-hidden="true"></footer>
+<footer class="tail" aria-hidden="true">◇</footer>
 </main>
 <noscript><p class="nojs">Zum Entschlüsseln und Spielen benötigst du JavaScript. Öffne die Seite direkt in Safari oder Firefox.</p></noscript>
 <script id="encrypted-data" type="application/json">{"version":1,"context":"potter-birthday-v1","iterations":600000,"salt":"1C/VWx6CcluDwZR8Zq3Nbw==","iv":"MvsOfMbtlMrMp5mW","data":"MZNPGzgMH9cQWmcREfIzJdjXJu8Mp7i6Ua5cH1VRqmXE+pfC+OGt9tBj43lX0JNcW3C6jjuKS47xeizY0FC/7oOauD+KfpxFD1+/35uEjlAxpFy7iihui5PI+rMXrtaSQoHJPlkCbQAwdWT8XKcP4fxNI7etPi/0RDYBNhLzvQ8s6oGEusXaOKcXg0jAOJXu9NM1A52Ol6EngCX2hG6tscFCY9y2OHy2OSqsY4CmucvnAeHkHoS2dVYcvq2DmSiMjv7hr2Srms4msRTbbAGZfioWgWRQW7Xq7tmJxMf7YOwd3h3w5ISdN/t+SrAw1KX4GkpheUgISRMA9mdlBw/E4X9dC7lKoeU8oZS8AGSpeMDlEfpigXxEZxBBIv3K0rmV5A32+pv1kzB4qMn0tFrpMHx+Ui4M7Xz7EMplFrzwk1L6XVaNko9pj1/CvMZzM021OoRXIev8x8ExfrND7LKQqMmXjszKpF7hIi1ZE4/VyZlH87tBGabr5tIkkwpl/wvnbDZI1kqvRRZo3GjExsxcwYqMJO5qwtPINaRzzTLx3N9MEajWBLtFGn20cpT3QjDiVhSmbxfhNgYkXHC8rl6zPDTC78Xjlq+TQejqc4q/whsMa6FRyXyCy1WiFs9uQNfYmj9xq2vdQG8JRfL76SPLfF+adxUevnNURBqBWA/wgwTRZLJjceJ3X7CwgXZslA3v9DQAlNGr8RWsxtMcb5NQ6wuWUVKiCtV9kxitY+AtDkJy80W7zCtx/Sv+uI8UXg4TaU/M0dSYT70WlL7AIDdxRtBFWycoSwRZAS8T88cLinnKmTUDSBu4qCE3CYm2QdnC76ipwh4tP17IQP3Hq8WFyguBssUTSJGyAWP6owjuLIGe5Ant0CXt/7pWT3Sd99NJKwQmAziRP/aysxZKGuWWg9997xPKhdgrNSGyUOTPbB00ibQI/wqOu5fMRGusyrnd41975XinhNhOnq2/LJyk3KLuSzxp9Y6fsUKhYuhsKc0nhz8rrpXjpM62p58rhWQfUUkgVRbuOkYVlBYZdNiKYK0Smd1eKcVWb9k="}</script>
@@ -65,9 +83,7 @@ button:disabled{opacity:1}
 'use strict';
 (()=>{
  const $=id=>document.getElementById(id);
- const paper=document.querySelector('.paper'),texture=document.querySelector('.paper-texture');
- const tilePaper=()=>{const count=Math.ceil(paper.offsetHeight/100);if(texture.children.length===count)return;texture.replaceChildren(...Array.from({length:count},()=>{const tile=document.createElement('div');tile.className='paper-tile art';return tile;}));};
- tilePaper();new ResizeObserver(tilePaper).observe(paper);
+
  const form=$('unlock'),password=$('password'),button=$('open'),error=$('login-error');
  const decode=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
  let busy=false;
